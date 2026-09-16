@@ -21,8 +21,7 @@ const curriculumModules = [
     duration: "Day 1 - 2",
     icon: BookOpen,
     color: "#00D2FF",
-    image: basicAccImg,
-    subImages: [demoClass1, demoClass2, demoClass3, demoClass4, demoClass5],
+    image: demoClass1,
     desc: "Foundation principles of accounting, chart of accounts, assets vs liabilities, and real-world business bookkeeping framework.",
     topics: [
       "Accounting Equation & Golden Rules",
@@ -37,7 +36,7 @@ const curriculumModules = [
     duration: "Day 3 - 4",
     icon: FileText,
     color: "#FFB703",
-    image: module2Img,
+    image: demoClass2,
     desc: "Mastering debit and credit posting for everyday business transactions, sub-ledgers, and trial balance creation.",
     topics: [
       "Recording Journal Entries for Sales, Purchases & Expenses",
@@ -52,7 +51,7 @@ const curriculumModules = [
     duration: "Day 5 - 6",
     icon: Receipt,
     color: "#10B981",
-    image: module3Img,
+    image: demoClass3,
     desc: "Drafting professional GST invoices, debit/credit notes, receipt vouchers, and payment gateway workflows.",
     topics: [
       "Components of Standard Business Invoices",
@@ -67,7 +66,7 @@ const curriculumModules = [
     duration: "Day 7 - 8",
     icon: CreditCard,
     color: "#FF0055",
-    image: module4Img,
+    image: demoClass4,
     desc: "Managing customer credit terms, vendor bill payment schedules, aging analysis, and working capital optimization.",
     topics: [
       "Customer Invoice Tracking & Aging Analysis (AR)",
@@ -82,7 +81,7 @@ const curriculumModules = [
     duration: "Day 9 - 10",
     icon: Landmark,
     color: "#9D4EDD",
-    image: module5Img,
+    image: demoClass5,
     desc: "Matching bank statement entries against internal cash books, identifying timing differences, and resolving mismatches.",
     topics: [
       "Understanding Bank Statement Formats & Passbooks",
@@ -127,7 +126,7 @@ const curriculumModules = [
     duration: "Day 15",
     icon: CheckSquare,
     color: "#F72585",
-    image: crmImg,
+    image: module2Img,
     desc: "End-to-end practical project simulating a full month of accounting for a real business entity.",
     topics: [
       "Full 1-Month Practical Accounting Case Study",
@@ -139,18 +138,18 @@ const curriculumModules = [
 ];
 
 const allGalleryImages = [
-  { src: basicAccImg, title: "Module 1: Basic Accounting & Bookkeeping Main Poster" },
-  { src: demoClass1, title: "First Class Slide 1: Laptop Financial Workflows & Business Dashboard" },
-  { src: demoClass2, title: "First Class Slide 2: The Accounting Equation (ASSETS = LIABILITIES + EQUITY)" },
-  { src: demoClass3, title: "First Class Slide 3: Core Bookkeeping Cycle (Record • Organize • Reconcile • Grow)" },
-  { src: demoClass4, title: "First Class Slide 4: Financial Storytelling (Numbers Tell a Better Story)" },
-  { src: demoClass5, title: "First Class Slide 5: Structure of Chart of Accounts Clipboard" },
-  { src: module2Img, title: "Module 2: Journal Entries & Ledger Management (Balance Builds Business Scale)" },
-  { src: module3Img, title: "Module 3: Invoicing & Payment Handling (GST Invoice & Payment Processing)" },
-  { src: module4Img, title: "Module 4: Accounts Receivable & Payable (Sales, Expenses, Bank, Payroll Binders)" },
-  { src: module5Img, title: "Module 5: Bank Reconciliation & Reports (BRS Financial Analysis)" },
+  { src: demoClass1, title: "Module 1: Basic Accounting & Bookkeeping (Laptop Financial Workflows)" },
+  { src: demoClass2, title: "Module 2: Journal Entries & Ledger Management (Assets, Liabilities & Equity)" },
+  { src: demoClass3, title: "Module 3: Invoicing & Payment Handling (Record • Organize • Reconcile • Grow)" },
+  { src: demoClass4, title: "Module 4: Accounts Receivable & Payable (Numbers Tell a Better Story)" },
+  { src: demoClass5, title: "Module 5: Bank Reconciliation Basics BRS (Chart of Accounts Clipboard)" },
   { src: excelImg, title: "Module 6: Excel for Practical Accounting (VLOOKUP • Pivot Tables • Data Turns into Decisions)" },
-  { src: crmImg, title: "Module 7 & 8: CRM & Cloud Accounting Workflows (Tally • Zoho Books • CRM Platforms)" },
+  { src: crmImg, title: "Module 7: CRM & Cloud Accounting Workflows (Tally • Zoho Books • CRM Platforms)" },
+  { src: module2Img, title: "Module 8: Capstone Practical Accounting Project (Balance Builds Business Scale)" },
+  { src: basicAccImg, title: "Course Overview Poster: Basic Accounting & Bookkeeping Framework" },
+  { src: module3Img, title: "Practical Billing: GST Invoice & Payment Voucher Processing" },
+  { src: module4Img, title: "AR / AP Operations: Sales, Expenses, Bank, Payroll & Taxes Binders" },
+  { src: module5Img, title: "Financial Reporting: Passbook & Statement Analysis Charts" },
 ];
 
 export default function CurriculumTimeline({ onOpenModal }) {
@@ -329,34 +328,6 @@ export default function CurriculumTimeline({ onOpenModal }) {
                     <p style={{ fontSize: '0.85rem', color: '#64748B', lineHeight: 1.5, marginBottom: '16px' }}>
                       {mod.desc}
                     </p>
-
-                    {/* First Class Sub-Lesson Slide Thumbnails for Module 1 */}
-                    {mod.subImages && mod.subImages.length > 0 && (
-                      <div style={{ background: '#F1F5F9', padding: '10px', borderRadius: '12px', marginBottom: '16px' }}>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#1E40AF', marginBottom: '8px' }}>
-                          📸 FIRST CLASS 5 PRACTICAL SLIDES:
-                        </div>
-                        <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '4px' }}>
-                          {mod.subImages.map((subImg, sIdx) => (
-                            <img
-                              key={sIdx}
-                              src={subImg}
-                              alt={`First Class Slide ${sIdx + 1}`}
-                              onClick={() => openImageInGallery(subImg)}
-                              style={{
-                                width: '48px',
-                                height: '48px',
-                                objectFit: 'cover',
-                                borderRadius: '8px',
-                                border: '1.5px solid #93C5FD',
-                                cursor: 'pointer',
-                                flexShrink: 0
-                              }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    )}
 
                     {/* Topics Bullet Points */}
                     <div style={{ borderTop: '1px solid #F1F5F9', paddingTop: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
