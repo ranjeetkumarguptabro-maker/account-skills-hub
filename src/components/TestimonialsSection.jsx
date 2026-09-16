@@ -1,29 +1,33 @@
 import React from 'react';
+import female1Img from '../assets/student-female-1.png';
+import female2Img from '../assets/student-female-2.png';
+import male1Img from '../assets/student-male-1.png';
+import male2Img from '../assets/student-male-2.png';
 
 const testimonials = [
   {
     quote: "I used to struggle with ledger posting and debit/credit rules. The mentor explained complex accounts topics so simply that I built real confidence for interviews!",
-    name: "Yash Royman",
+    name: "Priya Sharma",
     role: "B.Com Graduate • Junior Accountant",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+    avatar: female1Img
   },
   {
     quote: "The GST Invoicing and Bank Reconciliation practical modules were the best part! Real software tasks made me job-ready.",
-    name: "Divya Dutra",
+    name: "Rahul Arora",
     role: "BBA Student • Billing Specialist",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+    avatar: male1Img
   },
   {
     quote: "I never realized how powerful Excel VLOOKUP & Pivot tables were until I joined this 15-day internship. Best ₹399 investment!",
-    name: "Clara Santoso",
+    name: "Sneha Patel",
     role: "MBA Finance • Accounts Executive",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+    avatar: female2Img
   },
   {
     quote: "Got placed as an Accounts Receivable Associate right after adding the AccountSkills Hub Internship Certificate to my LinkedIn & Resume.",
-    name: "Riya Karikalan",
+    name: "Vikram Malhotra",
     role: "Commerce Fresher • AR Specialist",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80"
+    avatar: male2Img
   }
 ];
 
