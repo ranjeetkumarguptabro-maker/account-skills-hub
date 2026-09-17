@@ -183,36 +183,11 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
                 <MessageCircle size={14} /> WhatsApp: 9643442360
               </a>
             </div>
-          </div>
         </div>
-
       </div>
     </div>
   );
 }
 
-      </div>
-    </div>
-  );
-}
 
-const labelStyle = {
-  fontSize: '0.85rem',
-  fontWeight: 700,
-  color: '#334155',
-  marginBottom: '6px',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '6px'
-};
 
-const inputStyle = {
-  width: '100%',
-  padding: '12px 14px',
-  borderRadius: '10px',
-  background: '#F8FAFC',
-  border: '1px solid #CBD5E1',
-  color: '#0F172A',
-  fontSize: '0.9rem',
-  fontFamily: 'inherit'
-};
