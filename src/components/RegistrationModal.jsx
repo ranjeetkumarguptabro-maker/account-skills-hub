@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, MessageCircle, CheckCircle2, Phone, User, GraduationCap, Clock, QrCode, Instagram } from 'lucide-react';
+import { X, Sparkles, MessageCircle, Instagram } from 'lucide-react';
 import whatsappQrImg from '../assets/whatsapp-qr.png';
 import instaQrImg from '../assets/insta-qr.png';
 
@@ -183,11 +183,10 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
                 <MessageCircle size={14} /> WhatsApp: 9643442360
               </a>
             </div>
+          </div>
         </div>
+
       </div>
     </div>
   );
 }
-
-
-
