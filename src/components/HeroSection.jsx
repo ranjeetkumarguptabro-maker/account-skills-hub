@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2, Award, Zap, Phone, Eye, X, ArrowRight, ShieldCheck, TrendingUp, Users, Laptop } from 'lucide-react';
+import { Sparkles, CheckCircle2, Award, Zap, Phone, Eye, X, ArrowRight, ShieldCheck, TrendingUp, Users, Laptop, ZoomIn } from 'lucide-react';
 import flyerImg from '../assets/internship-flyer.jpg';
 import checkIcon from '../assets/check-icon.png';
+import practicalLabImg from '../assets/practical-lab-poster.jpg';
+import verifiedCredImg from '../assets/verified-credential-poster.jpg';
 
 export default function HeroSection({ onOpenModal }) {
-  const [showPosterModal, setShowPosterModal] = useState(false);
+  const [activePoster, setActivePoster] = useState(null);
 
   return (
     <section id="overview" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -38,16 +40,16 @@ export default function HeroSection({ onOpenModal }) {
           </div>
 
           {/* Giant Bold Headline matching Reference Image */}
-          <h1 className="giant-heading" style={{ marginBottom: '24px' }}>
+          <h1 className="giant-heading" style={{ marginBottom: '16px' }}>
             GAIN CORPORATE <br />
-            <span style={{ color: '#2563EB' }}>ACCOUNTING SKILLS</span> TODAY.
+            <span className="gradient-text">ACCOUNTING SKILLS</span> TODAY.
           </h1>
 
           <p style={{
-            fontSize: '1.15rem',
-            color: '#475569',
             maxWidth: '720px',
-            margin: '0 auto 32px auto',
+            margin: '0 auto 36px auto',
+            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+            color: '#334155',
             lineHeight: 1.6,
             fontWeight: 500
           }}>
@@ -86,41 +88,16 @@ export default function HeroSection({ onOpenModal }) {
             ))}
           </div>
 
-          {/* 3 Floating Cards Showcase matching Reference Hero */}
+          {/* 3 Showcase Cards Grid with High-Res Posters */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gap: '24px',
-            maxWidth: '960px',
+            maxWidth: '1040px',
             margin: '0 auto'
           }} className="hero-3cards">
             
-            {/* Card 1: Practical Lab Preview */}
-            <div className="ref-card" style={{ padding: '20px', textAlign: 'left', position: 'relative' }}>
-              <div style={{
-                background: '#EFF6FF',
-                borderRadius: '14px',
-                height: '180px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: '16px',
-                border: '1px solid #BFDBFE'
-              }}>
-                <Laptop size={44} color="#2563EB" />
-                <div style={{ fontWeight: 800, color: '#1E40AF', marginTop: '10px', fontSize: '0.95rem' }}>Practical Software Lab</div>
-                <div style={{ fontSize: '0.75rem', color: '#64748B' }}>Tally • Excel • CRM</div>
-              </div>
-              <div style={{ fontWeight: 800, fontSize: '1rem', color: '#0F172A', marginBottom: '4px' }}>
-                100% Practical Workflows
-              </div>
-              <div style={{ fontSize: '0.85rem', color: '#64748B' }}>
-                No theory! Work on actual ledger & invoice files.
-              </div>
-            </div>
-
-            {/* Card 2: Interactive Poster Flyer Showcase (Clickable) */}
+            {/* Card 1: Practical Software Lab Poster */}
             <div 
               className="ref-card" 
               style={{
@@ -128,13 +105,52 @@ export default function HeroSection({ onOpenModal }) {
                 textAlign: 'left',
                 border: '2px solid #2563EB',
                 cursor: 'pointer',
-                transform: 'translateY(-12px)',
-                boxShadow: '0 20px 40px rgba(37, 99, 235, 0.15)'
+                boxShadow: '0 10px 30px rgba(37, 99, 235, 0.12)',
+                transition: 'transform 0.3s ease'
               }}
-              onClick={() => setShowPosterModal(true)}
+              onClick={() => setActivePoster({ img: practicalLabImg, title: "Practical Software Lab Poster" })}
             >
-              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px' }}>
-                <img src={flyerImg} alt="Official Internship Brochure" style={{ width: '100%', display: 'block', borderRadius: '14px' }} />
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '260px', background: '#0F172A' }}>
+                <img src={practicalLabImg} alt="Practical Software Lab Poster" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }} />
+                <div style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  background: 'rgba(15, 23, 42, 0.85)',
+                  color: '#FFFFFF',
+                  padding: '4px 10px',
+                  borderRadius: '12px',
+                  fontSize: '0.7rem',
+                  fontWeight: 800,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  backdropFilter: 'blur(8px)'
+                }}>
+                  <Eye size={12} /> Expand
+                </div>
+              </div>
+              <div style={{ padding: '10px 4px 4px 4px' }}>
+                <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0F172A' }}>Practical Software Lab</div>
+                <div style={{ fontSize: '0.78rem', color: '#2563EB', fontWeight: 700 }}>Tally • Excel • CRM (100% Practical)</div>
+              </div>
+            </div>
+
+            {/* Card 2: Official Syllabus Brochure */}
+            <div 
+              className="ref-card" 
+              style={{
+                padding: '12px',
+                textAlign: 'left',
+                border: '2px solid #2563EB',
+                cursor: 'pointer',
+                transform: 'translateY(-10px)',
+                boxShadow: '0 20px 40px rgba(37, 99, 235, 0.18)'
+              }}
+              onClick={() => setActivePoster({ img: flyerImg, title: "Official Internship Syllabus Poster" })}
+            >
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '260px', background: '#0F172A' }}>
+                <img src={flyerImg} alt="Official Internship Brochure" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }} />
                 <div style={{
                   position: 'absolute',
                   top: '10px',
@@ -147,41 +163,54 @@ export default function HeroSection({ onOpenModal }) {
                   fontWeight: 800,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  backdropFilter: 'blur(8px)'
                 }}>
                   <Eye size={12} /> Expand
                 </div>
               </div>
-              <div style={{ padding: '10px 4px 4px 4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#0F172A' }}>Official Syllabus Brochure</div>
-                  <div style={{ fontSize: '0.75rem', color: '#2563EB', fontWeight: 700 }}>Click to Inspect Full Poster</div>
-                </div>
+              <div style={{ padding: '10px 4px 4px 4px' }}>
+                <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0F172A' }}>Official Syllabus Brochure</div>
+                <div style={{ fontSize: '0.78rem', color: '#2563EB', fontWeight: 700 }}>Full 15-Day Course Plan</div>
               </div>
             </div>
 
-            {/* Card 3: Certificate Credential */}
-            <div className="ref-card" style={{ padding: '20px', textAlign: 'left' }}>
-              <div style={{
-                background: '#FEF3C7',
-                borderRadius: '14px',
-                height: '180px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: '16px',
-                border: '1px solid #FCD34D'
-              }}>
-                <Award size={44} color="#D97706" />
-                <div style={{ fontWeight: 800, color: '#92400E', marginTop: '10px', fontSize: '0.95rem' }}>Verified Credential</div>
-                <div style={{ fontSize: '0.75rem', color: '#B45309' }}>Shareable on Resume & LinkedIn</div>
+            {/* Card 3: Verified Credential & Internship Certification Poster */}
+            <div 
+              className="ref-card" 
+              style={{
+                padding: '12px',
+                textAlign: 'left',
+                border: '2px solid #2563EB',
+                cursor: 'pointer',
+                boxShadow: '0 10px 30px rgba(37, 99, 235, 0.12)',
+                transition: 'transform 0.3s ease'
+              }}
+              onClick={() => setActivePoster({ img: verifiedCredImg, title: "Verified Credential & Internship Certification Poster" })}
+            >
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '260px', background: '#0F172A' }}>
+                <img src={verifiedCredImg} alt="Verified Credential Poster" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }} />
+                <div style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  background: 'rgba(15, 23, 42, 0.85)',
+                  color: '#FFFFFF',
+                  padding: '4px 10px',
+                  borderRadius: '12px',
+                  fontSize: '0.7rem',
+                  fontWeight: 800,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  backdropFilter: 'blur(8px)'
+                }}>
+                  <Eye size={12} /> Expand
+                </div>
               </div>
-              <div style={{ fontWeight: 800, fontSize: '1rem', color: '#0F172A', marginBottom: '4px' }}>
-                Internship Certification
-              </div>
-              <div style={{ fontSize: '0.85rem', color: '#64748B' }}>
-                Boost employer confidence & get job-ready.
+              <div style={{ padding: '10px 4px 4px 4px' }}>
+                <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0F172A' }}>Verified Credential</div>
+                <div style={{ fontSize: '0.78rem', color: '#2563EB', fontWeight: 700 }}>Shareable on Resume & LinkedIn</div>
               </div>
             </div>
 
@@ -323,50 +352,52 @@ export default function HeroSection({ onOpenModal }) {
       </div>
 
       {/* Lightbox Modal for Poster Viewer */}
-      {showPosterModal && (
+      {activePoster && (
         <div style={{
           position: 'fixed',
           top: 0,
           left: 0,
           width: '100vw',
           height: '100vh',
-          background: 'rgba(15, 23, 42, 0.8)',
+          background: 'rgba(15, 23, 42, 0.88)',
           backdropFilter: 'blur(16px)',
           zIndex: 1000,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '24px'
-        }}>
-          <button 
-            onClick={() => setShowPosterModal(false)}
-            style={{
-              position: 'absolute',
-              top: '24px',
-              right: '24px',
-              background: 'rgba(255, 255, 255, 0.2)',
-              border: '1px solid rgba(255, 255, 255, 0.4)',
-              color: '#FFFFFF',
-              borderRadius: '50%',
-              width: '44px',
-              height: '44px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-          >
-            <X size={24} />
-          </button>
-
-          <div style={{ maxWidth: '650px', width: '100%', maxHeight: '90vh', overflowY: 'auto' }}>
+        }} onClick={() => setActivePoster(null)}>
+          <div style={{ position: 'relative', maxWidth: '600px', width: '100%', maxHeight: '90vh' }} onClick={e => e.stopPropagation()}>
+            <button 
+              onClick={() => setActivePoster(null)}
+              style={{
+                position: 'absolute',
+                top: '-15px',
+                right: '-15px',
+                background: '#FFFFFF',
+                color: '#0F172A',
+                border: 'none',
+                borderRadius: '50%',
+                width: '38px',
+                height: '38px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 900,
+                boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
+                zIndex: 10
+              }}
+            >
+              <X size={20} />
+            </button>
             <img 
-              src={flyerImg} 
-              alt="15-Day Practical Accounting Internship Poster Full View" 
-              style={{ width: '100%', borderRadius: '16px', border: '2px solid #BFDBFE', boxShadow: '0 25px 50px rgba(0,0,0,0.3)' }}
+              src={activePoster.img} 
+              alt={activePoster.title} 
+              style={{ width: '100%', maxHeight: '75vh', objectFit: 'contain', borderRadius: '16px', border: '2px solid #BFDBFE', boxShadow: '0 25px 50px rgba(0,0,0,0.5)', display: 'block' }}
             />
             <div style={{ marginTop: '16px', textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '16px' }}>
-              <button className="btn-gold" onClick={() => { setShowPosterModal(false); onOpenModal('demo'); }}>
+              <button className="btn-gold" onClick={() => { setActivePoster(null); onOpenModal('demo'); }}>
                 BOOK FREE DEMO NOW
               </button>
             </div>
