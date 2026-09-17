@@ -13,7 +13,7 @@ A high-converting, modern, and corporate web platform designed for the **Account
 ## 🌟 Key Features
 
 ### 1. 🎨 Corporate White & Blue Aesthetic
-- Built with a clean, high-contrast **White (`#FFFFFF`) & Sky Blue (`#E0F2FE`)** visual hierarchy matching corporate financial platforms.
+- Built with a clean, high-contrast **White  (`#FFFFFF`) & Sky Blue (`#E0F2FE`)** visual hierarchy matching corporate financial platforms.
 - Ambient 3D floating geometric backdrop powered by React Three Fiber & Three.js.
 
 ### 2. 🔁 Continuous Live News Marquee
