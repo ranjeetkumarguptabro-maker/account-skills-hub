@@ -28,7 +28,7 @@ A high-converting, modern, and corporate web platform designed for the **Account
 - Direct WhatsApp chat link generator with auto-filled user details.
 
 ### 4. 🖼️ Dedicated Module Visuals & 10+ Slide Lightbox Gallery
-- Each of the 8 curriculum modules displays a dedicated high-resolution visual topic cover:
+- Each of the 8 curriculum modules displays a dedicated  high-resolution visual topic cover:
   - **Module 1**: Laptop Financial Workflows & Business Dashboard
   - **Module 2**: Journal Entries & Ledger Management (*Assets, Liabilities & Equity*)
   - **Module 3**: Invoicing & Payment Handling (*Record, Organize, Reconcile, Grow*)
