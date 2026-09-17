@@ -6,7 +6,7 @@
 ![CSS3](https://img.shields.io/badge/Style-Modern_White_%26_Blue-2563EB)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A high-converting, modern, and corporate web platform designed for the **AccountSkills Hub 15-Day Practical Accounting & CRM Internship Program**, targeted at B.Com students, BBA students, MBA Finance graduates, commerce freshers, and job seekers.
+A high-converting, modern, and corporate web platform designed  for the **AccountSkills Hub 15-Day Practical Accounting & CRM Internship Program**, targeted at B.Com students, BBA students, MBA Finance graduates, commerce freshers, and job seekers.
 
 ---
 
