@@ -11,6 +11,7 @@ import FAQSection from './components/FAQSection';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 import RegistrationModal from './components/RegistrationModal';
+import MobileStickyBar from './components/MobileStickyBar';
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -42,6 +43,7 @@ export default function App() {
 
         <Footer onOpenModal={handleOpenModal} />
         <FloatingWhatsApp onOpenModal={handleOpenModal} />
+        <MobileStickyBar onOpenModal={handleOpenModal} />
 
         <RegistrationModal 
           isOpen={modalOpen}
