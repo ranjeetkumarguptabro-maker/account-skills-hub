@@ -63,42 +63,47 @@ export default function Navbar({ onOpenModal }) {
         borderBottom: scrolled ? '1px solid rgba(37, 99, 235, 0.2)' : '1px solid #E2E8F0',
         boxShadow: scrolled ? '0 4px 20px rgba(15, 23, 42, 0.06)' : 'none'
       }}>
-        <div style={{
+        <div className="nav-container" style={{
           maxWidth: '1280px',
           margin: '0 auto',
           padding: '12px 24px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          gap: '8px'
         }}>
           {/* Brand Logo & Name */}
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
             <img 
               src={logoImg} 
               alt="AccountSkills Hub Logo" 
+              className="nav-logo-img"
               style={{
-                height: '46px',
+                height: '44px',
                 borderRadius: '8px',
                 border: '2px solid rgba(37, 99, 235, 0.3)',
-                boxShadow: '0 2px 10px rgba(37, 99, 235, 0.15)'
+                boxShadow: '0 2px 10px rgba(37, 99, 235, 0.15)',
+                transition: 'height 0.2s ease'
               }} 
             />
             <div>
-              <div style={{
+              <div className="nav-brand-title" style={{
                 fontFamily: 'var(--font-heading)',
                 fontWeight: 900,
                 fontSize: '1.25rem',
                 color: '#0F172A',
                 lineHeight: 1.1,
-                letterSpacing: '0.5px'
+                letterSpacing: '0.4px',
+                whiteSpace: 'nowrap'
               }}>
                 ACCOUNTSKILLS <span style={{ color: '#2563EB' }}>HUB</span>
               </div>
-              <div style={{
-                fontSize: '0.7rem',
+              <div className="nav-brand-tagline" style={{
+                fontSize: '0.68rem',
                 fontWeight: 700,
                 color: '#D97706',
-                letterSpacing: '2px'
+                letterSpacing: '1.5px',
+                marginTop: '1px'
               }}>
                 LEARN • PRACTICE • GROW
               </div>
@@ -120,34 +125,36 @@ export default function Navbar({ onOpenModal }) {
           </nav>
 
           {/* Action CTAs */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <button 
-              className="btn-gold" 
+              className="btn-gold nav-btn" 
               onClick={() => onOpenModal('demo')}
               style={{ 
-                padding: '6px 14px', 
+                padding: '6px 12px', 
                 fontSize: '0.78rem', 
                 fontWeight: 800,
-                letterSpacing: '0.4px',
+                letterSpacing: '0.3px',
                 borderRadius: '9999px',
-                gap: '5px'
+                gap: '4px',
+                whiteSpace: 'nowrap'
               }}
             >
-              <Sparkles size={14} /> FREE DEMO CLASS
+              <Sparkles size={13} /> FREE DEMO<span className="hide-mobile-word">&nbsp;CLASS</span>
             </button>
             <button 
-              className="btn-primary"
+              className="btn-primary nav-btn"
               onClick={() => onOpenModal('enroll')}
               style={{ 
-                padding: '6px 14px', 
+                padding: '6px 12px', 
                 fontSize: '0.78rem', 
                 fontWeight: 800,
-                letterSpacing: '0.4px',
+                letterSpacing: '0.3px',
                 borderRadius: '9999px',
-                gap: '5px'
+                gap: '4px',
+                whiteSpace: 'nowrap'
               }}
             >
-              <MessageCircle size={14} /> ENROL NOW ₹399
+              <MessageCircle size={13} /> ENROL<span className="hide-mobile-word">&nbsp;NOW</span> ₹399
             </button>
           </div>
         </div>
@@ -170,6 +177,28 @@ export default function Navbar({ onOpenModal }) {
 
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
+        }
+
+        @media (max-width: 600px) {
+          .nav-container {
+            padding: 8px 12px !important;
+          }
+          .nav-logo-img {
+            height: 32px !important;
+          }
+          .nav-brand-title {
+            font-size: 0.95rem !important;
+          }
+          .nav-brand-tagline {
+            display: none !important;
+          }
+          .nav-btn {
+            padding: 5px 9px !important;
+            font-size: 0.7rem !important;
+          }
+          .hide-mobile-word {
+            display: none !important;
+          }
         }
       `}</style>
     </>
