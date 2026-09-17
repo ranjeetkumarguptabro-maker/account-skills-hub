@@ -93,7 +93,7 @@ export default function HeroSection({ onOpenModal }) {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gap: '24px',
-            maxWidth: '1040px',
+            maxWidth: '1080px',
             margin: '0 auto'
           }} className="hero-3cards">
             
@@ -106,12 +106,13 @@ export default function HeroSection({ onOpenModal }) {
                 border: '2px solid #2563EB',
                 cursor: 'pointer',
                 boxShadow: '0 10px 30px rgba(37, 99, 235, 0.12)',
-                transition: 'transform 0.3s ease'
+                transition: 'transform 0.3s ease',
+                background: '#FFFFFF'
               }}
               onClick={() => setActivePoster({ img: practicalLabImg, title: "Practical Software Lab Poster" })}
             >
-              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '260px', background: '#0F172A' }}>
-                <img src={practicalLabImg} alt="Practical Software Lab Poster" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }} />
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '380px', background: '#F8FAFC', border: '1px solid #E2E8F0' }}>
+                <img src={practicalLabImg} alt="Practical Software Lab Poster" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', borderRadius: '14px' }} />
                 <div style={{
                   position: 'absolute',
                   top: '10px',
@@ -130,7 +131,7 @@ export default function HeroSection({ onOpenModal }) {
                   <Eye size={12} /> Expand
                 </div>
               </div>
-              <div style={{ padding: '10px 4px 4px 4px' }}>
+              <div style={{ padding: '12px 4px 4px 4px' }}>
                 <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0F172A' }}>Practical Software Lab</div>
                 <div style={{ fontSize: '0.78rem', color: '#2563EB', fontWeight: 700 }}>Tally • Excel • CRM (100% Practical)</div>
               </div>
@@ -145,12 +146,13 @@ export default function HeroSection({ onOpenModal }) {
                 border: '2px solid #2563EB',
                 cursor: 'pointer',
                 transform: 'translateY(-10px)',
-                boxShadow: '0 20px 40px rgba(37, 99, 235, 0.18)'
+                boxShadow: '0 20px 40px rgba(37, 99, 235, 0.18)',
+                background: '#FFFFFF'
               }}
               onClick={() => setActivePoster({ img: flyerImg, title: "Official Internship Syllabus Poster" })}
             >
-              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '260px', background: '#0F172A' }}>
-                <img src={flyerImg} alt="Official Internship Brochure" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }} />
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '380px', background: '#F8FAFC', border: '1px solid #E2E8F0' }}>
+                <img src={flyerImg} alt="Official Internship Brochure" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', borderRadius: '14px' }} />
                 <div style={{
                   position: 'absolute',
                   top: '10px',
@@ -169,7 +171,7 @@ export default function HeroSection({ onOpenModal }) {
                   <Eye size={12} /> Expand
                 </div>
               </div>
-              <div style={{ padding: '10px 4px 4px 4px' }}>
+              <div style={{ padding: '12px 4px 4px 4px' }}>
                 <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0F172A' }}>Official Syllabus Brochure</div>
                 <div style={{ fontSize: '0.78rem', color: '#2563EB', fontWeight: 700 }}>Full 15-Day Course Plan</div>
               </div>
@@ -184,12 +186,13 @@ export default function HeroSection({ onOpenModal }) {
                 border: '2px solid #2563EB',
                 cursor: 'pointer',
                 boxShadow: '0 10px 30px rgba(37, 99, 235, 0.12)',
-                transition: 'transform 0.3s ease'
+                transition: 'transform 0.3s ease',
+                background: '#FFFFFF'
               }}
               onClick={() => setActivePoster({ img: verifiedCredImg, title: "Verified Credential & Internship Certification Poster" })}
             >
-              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '260px', background: '#0F172A' }}>
-                <img src={verifiedCredImg} alt="Verified Credential Poster" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }} />
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '14px', height: '380px', background: '#F8FAFC', border: '1px solid #E2E8F0' }}>
+                <img src={verifiedCredImg} alt="Verified Credential Poster" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', borderRadius: '14px' }} />
                 <div style={{
                   position: 'absolute',
                   top: '10px',
@@ -208,7 +211,7 @@ export default function HeroSection({ onOpenModal }) {
                   <Eye size={12} /> Expand
                 </div>
               </div>
-              <div style={{ padding: '10px 4px 4px 4px' }}>
+              <div style={{ padding: '12px 4px 4px 4px' }}>
                 <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0F172A' }}>Verified Credential</div>
                 <div style={{ fontSize: '0.78rem', color: '#2563EB', fontWeight: 700 }}>Shareable on Resume & LinkedIn</div>
               </div>
